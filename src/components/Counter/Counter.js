@@ -13,8 +13,8 @@ class Counter extends React.Component {
 
   render() {
     return (
-      <button 
-        onClick={this.clickHandler} 
+      <button
+        onClick={this.clickHandler}
         className={`counter-${this.props.index}`}
       >
         {this.state.value}
