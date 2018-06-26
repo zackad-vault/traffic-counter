@@ -1,9 +1,14 @@
 import React from 'react'
+import SettingButton from './SettingButton'
+import SettingPanel from './SettingPanel'
 
 class Setting extends React.Component {
   render() {
     return(
-      <div></div>
+      <div>
+        <SettingButton />
+        <SettingPanel />
+      </div>
     )
   }
 }
