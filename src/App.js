@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import logo from './logo.svg'
+import './App.css'
 import Row from './components/Row/Row'
 
 class App extends Component {
@@ -16,8 +16,8 @@ class App extends Component {
         </p>
         <Row />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
