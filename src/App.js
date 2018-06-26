@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import logo from './logo.svg'
 import './App.css'
 import Row from './components/Row/Row'
+import Setting from './components/Setting/Setting'
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <Row />
+        <Setting />
       </div>
     )
   }
