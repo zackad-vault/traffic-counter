@@ -1,25 +1,18 @@
 import React from 'react'
+import CounterButton from './CounterButton'
 
 class Counter extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {value: 0}
-  }
-
-  clickHandler = () => {
-    this.setState({value: this.state.value + 1})
-  }
-
   render() {
-    return (
-      <button
-        onClick={this.clickHandler}
-        className={`counter-${this.props.index}`}
-      >
-        {this.state.value}
-      </button>
-    )
+    let counter = []
+
+    for (let index = 0; index < this.props.column; index++) {
+      counter[index] = []
+      for (let indexRow = 0; indexRow < this.props.row; indexRow++) {
+        counter[index][indexRow] = <CounterButton />
+      }
+    }
+
+    return <div>{counter}</div>
   }
 }
 
