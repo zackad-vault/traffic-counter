@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
 import logo from './logo.svg'
 import './App.css'
-import Row from './components/Row/Row'
+import Counter from './components/Counter/Counter'
 import Setting from './components/Setting/Setting'
 
 class App extends Component {
+  state = {
+    column: 0,
+    row: 0
+  }
+
   render() {
     return (
       <div className="App">
@@ -15,7 +20,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <Row />
+        <Counter column={this.state.column} row={this.state.row} />
         <Setting />
       </div>
     )
