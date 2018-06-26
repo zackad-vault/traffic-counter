@@ -1,5 +1,5 @@
 import React from 'react'
-import Counter from '../Counter/Counter.js'
+import Counter from '../Counter/Counter'
 
 class Row extends React.Component {
   render() {
