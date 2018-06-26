@@ -10,7 +10,7 @@ class Row extends React.Component {
     }
 
     return (
-        <div>
+      <div>
         {counter}
       </div>
     )
