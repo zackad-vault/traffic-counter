@@ -15,8 +15,8 @@ class App extends Component {
   }
 
   state = {
-    column: 0,
-    row: 0
+    column: 1,
+    row: 1
   }
 
   addColumn = () => {
