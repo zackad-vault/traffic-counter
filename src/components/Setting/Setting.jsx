@@ -7,7 +7,13 @@ class Setting extends React.Component {
     return(
       <div>
         <SettingButton />
-        <SettingPanel />
+        <SettingPanel
+          column={this.props.column}
+          addColumn={this.props.addColumn}
+          reduceColumn={this.props.reduceColumn}
+          row={this.props.row}
+          addRow={this.props.addRow}
+          reduceRow={this.props.reduceRow} />
       </div>
     )
   }
