@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { set, get } from 'idb-keyval'
 import logo from './logo.svg'
 import './App.css'
 import Counter from './components/Counter/Counter'
@@ -21,28 +22,29 @@ class App extends Component {
     row: 1
   }
 
+  componentDidMount() {
+    get('column').then(value => this.setState({column: value}))
+    get('row').then(value => this.setState({row: value}))
+  }
+
   addColumn = () => {
-    this.setState({
-      column: (this.state.column < this.maxColumn) ? this.state.column + 1 : this.maxColumn
-    })
+    let column = (this.state.column < this.maxColumn) ? this.state.column + 1 : this.maxColumn
+    set('column', column).then(this.setState({column: column}))
   }
 
   reduceColumn = () => {
-    this.setState({
-      column: (this.state.column > 1) ? this.state.column - 1 : 1
-    })
+    let column = (this.state.column > 1) ? this.state.column - 1 : 1
+    set('column', column).then(this.setState({ column: column }))
   }
 
   addRow = () => {
-    this.setState({
-      row: (this.state.row < this.maxRow) ? this.state.row + 1 : this.maxRow
-    })
+    let row = (this.state.row < this.maxRow) ? this.state.row + 1 : this.maxRow
+    set('row', row).then(this.setState({ row: row }))
   }
 
   reduceRow = () => {
-    this.setState({
-      row: (this.state.row > 1) ? this.state.row - 1 : 1
-    })
+    let row = (this.state.row > 1) ? this.state.row - 1 : 1
+    set('row', row).then(this.setState({row: row}))
   }
 
   render() {
