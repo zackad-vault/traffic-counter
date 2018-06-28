@@ -55,7 +55,6 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <Counter column={this.state.column} row={this.state.row} />
         <Setting
           column={this.state.column}
           addColumn={this.addColumn}
@@ -63,6 +62,7 @@ class App extends Component {
           row={this.state.row}
           addRow={this.addRow}
           reduceRow={this.reduceRow} />
+        <Counter column={this.state.column} row={this.state.row} />
       </div>
     )
   }
