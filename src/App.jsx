@@ -15,7 +15,7 @@ class App extends Component {
     this.addRow = this.addRow.bind(this)
     this.reduceRow = this.reduceRow.bind(this)
     this.maxColumn = 12
-    this.maxRow = 6
+    this.maxRow = 12
   }
 
   state = {
