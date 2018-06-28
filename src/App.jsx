@@ -24,13 +24,21 @@ class App extends Component {
   }
 
   componentDidMount() {
-    idbKeyval.get('column').then(value => this.setState({column: value}))
-    idbKeyval.get('row').then(value => this.setState({row: value}))
+    idbKeyval.get('column').then(value => {
+      if (value) {
+        this.setState({ column: value })
+      }
+    })
+    idbKeyval.get('row').then(value => {
+      if (value) {
+        this.setState({ row: value })
+      }
+    })
   }
 
   addColumn = () => {
     let column = (this.state.column < this.maxColumn) ? this.state.column + 1 : this.maxColumn
-    idbKeyval.set('column', column).then(this.setState({column: column}))
+    idbKeyval.set('column', column).then(this.setState({ column: column }))
   }
 
   reduceColumn = () => {
@@ -45,7 +53,7 @@ class App extends Component {
 
   reduceRow = () => {
     let row = (this.state.row > 1) ? this.state.row - 1 : 1
-    idbKeyval.set('row', row).then(this.setState({row: row}))
+    idbKeyval.set('row', row).then(this.setState({ row: row }))
   }
 
   render() {
