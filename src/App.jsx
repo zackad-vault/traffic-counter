@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { set, get } from 'idb-keyval'
+// import { set, get } from 'idb-keyval'
+import idbKeyval from './idb-keyval'
 import logo from './logo.svg'
 import './App.css'
 import Counter from './components/Counter/Counter'
@@ -23,28 +24,28 @@ class App extends Component {
   }
 
   componentDidMount() {
-    get('column').then(value => this.setState({column: value}))
-    get('row').then(value => this.setState({row: value}))
+    idbKeyval.get('column').then(value => this.setState({column: value}))
+    idbKeyval.get('row').then(value => this.setState({row: value}))
   }
 
   addColumn = () => {
     let column = (this.state.column < this.maxColumn) ? this.state.column + 1 : this.maxColumn
-    set('column', column).then(this.setState({column: column}))
+    idbKeyval.set('column', column).then(this.setState({column: column}))
   }
 
   reduceColumn = () => {
     let column = (this.state.column > 1) ? this.state.column - 1 : 1
-    set('column', column).then(this.setState({ column: column }))
+    idbKeyval.set('column', column).then(this.setState({ column: column }))
   }
 
   addRow = () => {
     let row = (this.state.row < this.maxRow) ? this.state.row + 1 : this.maxRow
-    set('row', row).then(this.setState({ row: row }))
+    idbKeyval.set('row', row).then(this.setState({ row: row }))
   }
 
   reduceRow = () => {
     let row = (this.state.row > 1) ? this.state.row - 1 : 1
-    set('row', row).then(this.setState({row: row}))
+    idbKeyval.set('row', row).then(this.setState({row: row}))
   }
 
   render() {
