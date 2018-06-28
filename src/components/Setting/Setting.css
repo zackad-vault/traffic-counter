@@ -1,0 +1,6 @@
+.setting__bar {
+  display: flex;
+  background: #333;
+  color: #fff;
+  height: 32px;
+}
