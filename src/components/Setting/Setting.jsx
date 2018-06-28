@@ -5,7 +5,7 @@ import './Setting.css'
 class Setting extends React.Component {
   render() {
     return(
-      <div className="setting__bar">
+      <div>
         <SettingPanel
           column={this.props.column}
           addColumn={this.props.addColumn}
