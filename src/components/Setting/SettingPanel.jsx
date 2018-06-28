@@ -4,7 +4,6 @@ class SettingPanel extends React.Component {
   render() {
     return (
       <div>
-        Setting Panel
         <div>
           <button className="reduce" onClick={this.props.reduceColumn}>-</button>
           <input type="text" value={this.props.column}/>

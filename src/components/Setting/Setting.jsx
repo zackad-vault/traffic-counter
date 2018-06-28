@@ -1,12 +1,10 @@
 import React from 'react'
-import SettingButton from './SettingButton'
 import SettingPanel from './SettingPanel'
 
 class Setting extends React.Component {
   render() {
     return(
       <div>
-        <SettingButton />
         <SettingPanel
           column={this.props.column}
           addColumn={this.props.addColumn}
