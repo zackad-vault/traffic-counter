@@ -12,6 +12,8 @@ class App extends Component {
     this.reduceColumn = this.reduceColumn.bind(this)
     this.addRow = this.addRow.bind(this)
     this.reduceRow = this.reduceRow.bind(this)
+    this.maxColumn = 12
+    this.maxRow = 6
   }
 
   state = {
@@ -21,25 +23,25 @@ class App extends Component {
 
   addColumn = () => {
     this.setState({
-      column: this.state.column + 1
+      column: (this.state.column < this.maxColumn) ? this.state.column + 1 : this.maxColumn
     })
   }
 
   reduceColumn = () => {
     this.setState({
-      column: ((this.state.column > 0) ? this.state.column - 1 : 0)
+      column: (this.state.column > 1) ? this.state.column - 1 : 1
     })
   }
 
   addRow = () => {
     this.setState({
-      row: this.state.row + 1
+      row: (this.state.row < this.maxRow) ? this.state.row + 1 : this.maxRow
     })
   }
 
   reduceRow = () => {
     this.setState({
-      row: ((this.state.row > 0) ? this.state.row - 1 : 0)
+      row: (this.state.row > 1) ? this.state.row - 1 : 1
     })
   }
 
