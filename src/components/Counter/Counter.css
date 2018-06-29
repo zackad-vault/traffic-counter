@@ -3,6 +3,11 @@
   justify-content: center;
   flex-direction: column;
 }
+
+.counter.landscape {
+  flex-direction: row;
+}
+
 .counter .landscape {
   display: flex;
   flex-direction: column;
