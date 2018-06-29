@@ -2,6 +2,12 @@ import React from 'react'
 import CounterRow from './CounterRow'
 
 class Counter extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.resetHandler = this.resetHandler.bind(this)
+  }
+
   state = {
     reset: false,
     orientation: "portrait"
