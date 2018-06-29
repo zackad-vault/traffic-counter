@@ -3,7 +3,8 @@ import CounterRow from './CounterRow'
 
 class Counter extends React.Component {
   state = {
-    reset: false
+    reset: false,
+    orientation: "portrait"
   }
 
   resetHandler = () => {
@@ -14,11 +15,11 @@ class Counter extends React.Component {
     let counter = []
 
     for (let index = 0; index < this.props.row; index++) {
-      counter[index] = <CounterRow row={this.props.column} key={index} reset={this.state.reset}/>
+      counter[index] = <CounterRow row={this.props.column} key={index} reset={this.state.reset} orientation={this.state.orientation} />
     }
 
     return (
-      <div>
+      <div className={'counter ' + this.state.orientation}>
         <button onClick={this.resetHandler}>Reset</button>
         {counter}
       </div>

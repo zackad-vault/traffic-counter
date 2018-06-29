@@ -17,7 +17,7 @@ class CounterRow extends React.Component {
       button[index] = <CounterButton reset={this.state.reset} />
     }
     return (
-      <div>
+      <div className={this.props.orientation}>
         {button}
       </div>
     )

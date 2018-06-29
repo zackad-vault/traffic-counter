@@ -1,3 +1,13 @@
+.counter {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.counter .landscape {
+  display: flex;
+  flex-direction: column;
+}
+
 .counter__button {
   min-width: 48px;
   min-height: 48px;
