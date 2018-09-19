@@ -4,6 +4,7 @@
         "react"
     ],
     "rules": {
+        "jsx-quotes": ["error", "prefer-single"],
         "quotes": ["error", "single"],
         "semi": ["error", "never"]
     }
