@@ -8,14 +8,14 @@ import ScreenRotation from '../../icons/screen_rotation.svg'
 class SettingPanel extends React.Component {
   render() {
     return (
-      <div className="setting__bar">
-        <button className="reduce" onClick={this.props.reduceColumn}><img src={ArrowLeft} alt="Reduce Column" /></button>
+      <div className='setting__bar'>
+        <button className='reduce' onClick={this.props.reduceColumn}><img src={ArrowLeft} alt='Reduce Column' /></button>
         <span>{this.props.column}</span>
-        <button className="add" onClick={this.props.addColumn}><img src={ArrowRight} alt="Add Column" /></button>
-        <button className="reduce" onClick={this.props.reduceRow}><img src={ArrowDown} alt="Reduce Row" /></button>
+        <button className='add' onClick={this.props.addColumn}><img src={ArrowRight} alt='Add Column' /></button>
+        <button className='reduce' onClick={this.props.reduceRow}><img src={ArrowDown} alt='Reduce Row' /></button>
         <span>{this.props.row}</span>
-        <button className="add" onClick={this.props.addRow}><img src={ArrowUp} alt="Add Row" /></button>
-        <button><img src={ScreenRotation} alt="Chane Orientation" /></button>
+        <button className='add' onClick={this.props.addRow}><img src={ArrowUp} alt='Add Row' /></button>
+        <button><img src={ScreenRotation} alt='Chane Orientation' /></button>
       </div>
     )
   }
