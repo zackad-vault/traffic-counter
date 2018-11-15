@@ -1,8 +1,7 @@
-language: node
+language: node_js
 
-before_script:
-  - npm -g install yarn
-  - yarn install
+node_js:
+ - '8'
 
 script:
   - yarn build
@@ -13,4 +12,4 @@ deploy:
   github-token: $GITHUB_TOKEN
   local-dir: build
   on:
-    branch: hotfix
+    tags: true
