@@ -10,7 +10,7 @@ class Counter extends React.Component {
 
   state = {
     reset: false,
-    orientation: 'portrait'
+    orientation: "portrait"
   }
 
   resetHandler = () => {

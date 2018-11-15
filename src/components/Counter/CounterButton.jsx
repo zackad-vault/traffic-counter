@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import './Counter.css'
 
 class CounterButton extends React.Component {
@@ -18,7 +18,7 @@ class CounterButton extends React.Component {
 
   render() {
     return (
-      <button onClick={this.clickHandler} className='counter__button'>
+      <button onClick={this.clickHandler} className="counter__button">
         {this.state.value}
       </button>
     )

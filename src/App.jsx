@@ -56,7 +56,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className='App'>
+      <div className="App">
         <Setting
           column={this.state.column}
           addColumn={this.addColumn}
