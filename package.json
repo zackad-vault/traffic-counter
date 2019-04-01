@@ -2,7 +2,7 @@
   "name": "traffic-counter",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://zackad.github.io/traffic-counter",
+  "homepage": "./",
   "dependencies": {
     "idb-keyval": "^3.0.5",
     "react": "^16.2.0",
