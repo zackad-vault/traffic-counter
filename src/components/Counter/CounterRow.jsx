@@ -14,7 +14,7 @@ class CounterRow extends React.Component {
     let button = []
 
     for (let index = 0; index < this.props.row; index++) {
-      button[index] = <CounterButton reset={this.state.reset} />
+      button[index] = <CounterButton key={index} reset={this.state.reset} />
     }
     return (
       <div className={this.props.orientation}>
