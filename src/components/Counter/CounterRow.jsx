@@ -1,27 +1,19 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import CounterButton from './CounterButton'
 
-class CounterRow extends React.Component {
-  state = {
-    reset: false
-  }
+function CounterRow({ reset, row }) {
+  let button = []
 
-  componentWillReceiveProps() {
-    this.setState({reset: this.props.reset})
+  for (let index = 0; index < row; index++) {
+    button[index] = <CounterButton key={index} reset={reset} />
   }
+  return <div>{button}</div>
+}
 
-  render() {
-    let button = []
-
-    for (let index = 0; index < this.props.row; index++) {
-      button[index] = <CounterButton key={index} reset={this.state.reset} />
-    }
-    return (
-      <div className={this.props.orientation}>
-        {button}
-      </div>
-    )
-  }
+CounterRow.propTypes = {
+  reset: PropTypes.bool,
+  row: PropTypes.number,
 }
 
 export default CounterRow
