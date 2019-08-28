@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { set, get } from 'idb-keyval'
+import './tailwind.src.css'
 import './App.css'
 import Counter from './components/Counter/Counter'
 import Setting from './components/Setting/Setting'
@@ -18,7 +19,7 @@ class App extends Component {
 
   state = {
     column: 1,
-    row: 1
+    row: 1,
   }
 
   componentDidMount() {
@@ -35,35 +36,36 @@ class App extends Component {
   }
 
   addColumn = () => {
-    let column = (this.state.column < this.maxColumn) ? this.state.column + 1 : this.maxColumn
+    let column = this.state.column < this.maxColumn ? this.state.column + 1 : this.maxColumn
     set('column', column).then(this.setState({ column: column }))
   }
 
   reduceColumn = () => {
-    let column = (this.state.column > 1) ? this.state.column - 1 : 1
+    let column = this.state.column > 1 ? this.state.column - 1 : 1
     set('column', column).then(this.setState({ column: column }))
   }
 
   addRow = () => {
-    let row = (this.state.row < this.maxRow) ? this.state.row + 1 : this.maxRow
+    let row = this.state.row < this.maxRow ? this.state.row + 1 : this.maxRow
     set('row', row).then(this.setState({ row: row }))
   }
 
   reduceRow = () => {
-    let row = (this.state.row > 1) ? this.state.row - 1 : 1
+    let row = this.state.row > 1 ? this.state.row - 1 : 1
     set('row', row).then(this.setState({ row: row }))
   }
 
   render() {
     return (
-      <div className="App">
+      <div className='App'>
         <Setting
           column={this.state.column}
           addColumn={this.addColumn}
           reduceColumn={this.reduceColumn}
           row={this.state.row}
           addRow={this.addRow}
-          reduceRow={this.reduceRow} />
+          reduceRow={this.reduceRow}
+        />
         <Counter column={this.state.column} row={this.state.row} />
       </div>
     )
