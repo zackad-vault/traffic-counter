@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import CounterRow from './CounterRow'
 
 class Counter extends React.Component {
@@ -35,6 +36,11 @@ class Counter extends React.Component {
       </div>
     )
   }
+}
+
+Counter.propTypes = {
+  column: PropTypes.number,
+  row: PropTypes.number,
 }
 
 export default Counter
