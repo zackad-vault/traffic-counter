@@ -8,6 +8,7 @@ v0.2.0 (next)
 [+] Add tailwindcss as styling
 [+] Add css optimization
 [-] Remove unused css files
+[-] Remove unused image logo
 
 v0.1.0 (2019-08-28)
 [+] Basic functionality
