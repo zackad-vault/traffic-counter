@@ -1,41 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import CounterRow from './CounterRow'
 
-class Counter extends React.Component {
-  constructor(props) {
-    super(props)
+function Counter({ column, row }) {
+  const [reset, setReset] = useState(false)
 
-    this.resetHandler = this.resetHandler.bind(this)
+  const resetHandler = () => {
+    setReset(prevValue => !prevValue)
   }
 
-  state = {
-    reset: false,
-    orientation: 'portrait',
+  let counter = []
+
+  for (let index = 0; index < row; index++) {
+    counter[index] = <CounterRow row={column} key={index} reset={reset} />
   }
 
-  resetHandler = () => {
-    this.setState({ reset: true })
-  }
-
-  render() {
-    let counter = []
-
-    for (let index = 0; index < this.props.row; index++) {
-      counter[index] = (
-        <CounterRow row={this.props.column} key={index} reset={this.state.reset} orientation={this.state.orientation} />
-      )
-    }
-
-    return (
-      <div className='text-center'>
-        <button className='border px-2 py-1 mt-1 bg-gray-500' onClick={this.resetHandler}>
-          Reset
-        </button>
-        {counter}
-      </div>
-    )
-  }
+  return (
+    <div className='text-center'>
+      <button className='border px-2 py-1 mt-1 bg-gray-500' onClick={resetHandler}>
+        Reset
+      </button>
+      {counter}
+    </div>
+  )
 }
 
 Counter.propTypes = {
