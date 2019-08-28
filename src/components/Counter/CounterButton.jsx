@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 class CounterButton extends React.Component {
   state = {
@@ -22,6 +23,10 @@ class CounterButton extends React.Component {
       </button>
     )
   }
+}
+
+CounterButton.propTypes = {
+  reset: PropTypes.bool,
 }
 
 export default CounterButton
