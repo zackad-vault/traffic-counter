@@ -10,23 +10,27 @@ class Counter extends React.Component {
 
   state = {
     reset: false,
-    orientation: "portrait"
+    orientation: 'portrait',
   }
 
   resetHandler = () => {
-    this.setState({reset: true})
+    this.setState({ reset: true })
   }
 
   render() {
     let counter = []
 
     for (let index = 0; index < this.props.row; index++) {
-      counter[index] = <CounterRow row={this.props.column} key={index} reset={this.state.reset} orientation={this.state.orientation} />
+      counter[index] = (
+        <CounterRow row={this.props.column} key={index} reset={this.state.reset} orientation={this.state.orientation} />
+      )
     }
 
     return (
       <div className={'counter ' + this.state.orientation}>
-        <button onClick={this.resetHandler}>Reset</button>
+        <button className='border px-2 py-1 mt-1 bg-gray-500' onClick={this.resetHandler}>
+          Reset
+        </button>
         {counter}
       </div>
     )
