@@ -4,5 +4,9 @@ https://github.com/zackad/traffic-counter
 Changelog:
 ([!] Important, [+] Addition, [-] Removal, [*] Fix/Change, [?] Feedback needed)
 
+v0.2.0 (next)
+[+] Add tailwindcss as styling
+[+] Add css optimization
+
 v0.1.0 (2019-08-28)
 [+] Basic functionality
