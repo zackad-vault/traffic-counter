@@ -27,7 +27,7 @@ class Counter extends React.Component {
     }
 
     return (
-      <div className={'counter ' + this.state.orientation}>
+      <div className='text-center'>
         <button className='border px-2 py-1 mt-1 bg-gray-500' onClick={this.resetHandler}>
           Reset
         </button>

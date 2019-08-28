@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { set, get } from 'idb-keyval'
 import './tailwind.src.css'
-import './App.css'
 import Counter from './components/Counter/Counter'
 import Setting from './components/Setting/Setting'
 
@@ -57,7 +56,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className='App'>
+      <div>
         <Setting
           column={this.state.column}
           addColumn={this.addColumn}
